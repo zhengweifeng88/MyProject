@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="110dp"
+    android:orientation="horizontal"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/remenhuati_item_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="sfsgasagasdg"/>
+    <LinearLayout
+        android:layout_marginLeft="13dp"
+        android:layout_width="110dp"
+        android:orientation="vertical"
+        android:layout_height="125dp">
+        <ImageView
+            android:id="@+id/remenhuati_item_img"
+            android:background="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+        <TextView
+            android:layout_marginTop="12dp"
+            android:id="@+id/remenhuati_item_title"
+            android:layout_marginLeft="10dp"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:text="服务科技机器人好用么？"
+            android:textColor="#FF333333"
+            android:textSize="13dp" />
+        <TextView
+            android:id="@+id/remenhuati_item_comment_count"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_width="42dp"
+            android:layout_height="14dp"
+            android:text="23人参与"
+            android:textColor="#FF999999"
+            android:textSize="10dp"
+            />
+    </LinearLayout>
+
 </LinearLayout>

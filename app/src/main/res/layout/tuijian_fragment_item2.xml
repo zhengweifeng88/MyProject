@@ -2,20 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="17dp"
     android:layout_height="wrap_content">
-    <ListView
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="17dp">
+        <View
+            android:layout_marginLeft="13dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="2dp"
+            android:layout_height="12dp"
+            android:background="#FFEA6F5A"
+            />
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:layout_width="48dp"
+            android:layout_height="17dp"
+            android:text="热门话题"
+            android:textColor="#FF8B8B8B"
+            android:textSize="12dp"
+            />
+        <TextView
+            android:layout_marginRight="13dp"
+            android:gravity="right|center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="17dp"
+            android:text="查看更多"
+            android:textColor="#FF8B8B8B"
+            android:textSize="12dp"
+            />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="19dp"
         android:id="@+id/tuijian_fragment_item2_lv"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></ListView>
-    <!--<TextView-->
-        <!--android:layout_marginTop="12dp"-->
-        <!--android:layout_marginLeft="13dp"-->
-        <!--android:layout_marginRight="13dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/tuijian_fragment_item2_tv"/>-->
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/tuijian_fragment_item2_img"/>-->
+        android:scrollbars="vertical"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

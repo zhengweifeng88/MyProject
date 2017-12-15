@@ -2,6 +2,7 @@ package test.bwei.com.myproject.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,11 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ((MyViewHolder)holder).tv.setText(list.get(position).getSummary());
         }else if(holder instanceof MyViewHolder2){
             youKeReMenHuaTiPresenter.showData();
+            ((MyViewHolder2)holder).lv.setHasFixedSize(true);
+
+            int spanCount = 1; // 只显示一行
+            StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(spanCount, StaggeredGridLayoutManager.HORIZONTAL);
+            ((MyViewHolder2)holder).lv.setLayoutManager(manager);
             youKeReMenHuaTiAdapter = new YouKeReMenHuaTiAdapter(context);
             ((MyViewHolder2)holder).lv.setAdapter(youKeReMenHuaTiAdapter);
         }
@@ -105,10 +111,10 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
     class MyViewHolder2 extends RecyclerView.ViewHolder {
-        ListView lv;
+        RecyclerView lv;
         public MyViewHolder2(View view) {
             super(view);
-            lv = (ListView) view.findViewById(R.id.tuijian_fragment_item2_lv);
+            lv = (RecyclerView) view.findViewById(R.id.tuijian_fragment_item2_lv);
         }
     }
 }
