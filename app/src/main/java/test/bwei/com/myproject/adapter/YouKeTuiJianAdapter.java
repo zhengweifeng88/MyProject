@@ -66,6 +66,15 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             //赋值
             Glide.with(context).load(list.get(position).getFace()).into(((MyViewHolder)holder).img);
             ((MyViewHolder)holder).tv.setText(list.get(position).getSummary());
+            ((MyViewHolder)holder).pinlun.setText(list.get(position).getComment_count());
+            ((MyViewHolder)holder).xihuan.setText(list.get(position).getRead_count());
+            ((MyViewHolder)holder).time.setText(list.get(position).getUpdate_time());
+            ((MyViewHolder)holder).guanzhetv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }else if(holder instanceof MyViewHolder2){
             youKeReMenHuaTiPresenter.showData();
             ((MyViewHolder2)holder).lv.setHasFixedSize(true);
@@ -102,12 +111,16 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView tv;
+        TextView tv,pinlun,xihuan,time,guanzhetv;
 
         public MyViewHolder(View view) {
             super(view);
             tv = (TextView) view.findViewById(R.id.tuijian_fragment_item_tv);
             img = (ImageView) view.findViewById(R.id.tuijian_fragment_item_img);
+            pinlun = (TextView) view.findViewById(R.id.tuijian_fragment_item_pinlun);
+            xihuan = (TextView) view.findViewById(R.id.tuijian_fragment_item_xihuan);
+            time = (TextView) view.findViewById(R.id.tuijian_fragment_item_time);
+            guanzhetv = (TextView) view.findViewById(R.id.tuijian_fragment_item_guanzhutv);
         }
     }
     class MyViewHolder2 extends RecyclerView.ViewHolder {
