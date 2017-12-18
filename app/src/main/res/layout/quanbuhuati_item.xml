@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:background="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/quanbuhuati_item_img"
+        android:layout_width="349dp"
+        android:layout_height="180dp" />
+    <!--<TextView-->
+        <!--android:id="@+id/quanbuhuati_item_tv"-->
+        <!--android:layout_width="116dp"-->
+        <!--android:layout_height="22dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:text="#外行人无踢踢#"-->
+        <!--android:textColor="#FF333333"-->
+        <!--android:textSize="16dp"-->
+        <!--/>-->
+</RelativeLayout>

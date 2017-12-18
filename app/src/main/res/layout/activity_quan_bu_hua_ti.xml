@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_quan_bu_hua_ti"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="test.bwei.com.myproject.view.QuanBuHuaTiActivity">
+    <LinearLayout
+        android:id="@+id/quanbuhuati_ll"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView
+            android:layout_marginLeft="13dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="16dp"
+            android:layout_height="22dp"
+            android:background="@drawable/zuojiantou"
+            android:id="@+id/quanbuhuati_img"/>
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:text="全部话题"
+            android:textColor="#FF333333"
+            android:textSize="16dp"
+            />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="13dp"
+        android:layout_below="@id/quanbuhuati_ll"
+        android:id="@+id/quanbuhuati_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

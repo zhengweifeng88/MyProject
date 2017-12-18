@@ -25,6 +25,7 @@
             android:textSize="12dp"
             />
         <TextView
+            android:id="@+id/tuijian_fragment_item2_tv"
             android:layout_marginRight="13dp"
             android:gravity="right|center_vertical"
             android:layout_width="match_parent"

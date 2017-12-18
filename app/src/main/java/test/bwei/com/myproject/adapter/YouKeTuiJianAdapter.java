@@ -1,6 +1,7 @@
 package test.bwei.com.myproject.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import test.bwei.com.myproject.bean.YouKeReMenHuaTiBean;
 import test.bwei.com.myproject.bean.YouKeTuJianBean;
 import test.bwei.com.myproject.contract.YouKeReMenHuaTiContract;
 import test.bwei.com.myproject.presenter.YouKeReMenHuaTiPresenter;
+import test.bwei.com.myproject.view.QuanBuHuaTiActivity;
 
 /**
  * Created by Administrator on 2017/12/14.
@@ -79,11 +81,18 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             youKeReMenHuaTiPresenter.showData();
             ((MyViewHolder2)holder).lv.setHasFixedSize(true);
 
-            int spanCount = 1; // 只显示一行
-            StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(spanCount, StaggeredGridLayoutManager.HORIZONTAL);
+            StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL);
             ((MyViewHolder2)holder).lv.setLayoutManager(manager);
             youKeReMenHuaTiAdapter = new YouKeReMenHuaTiAdapter(context);
             ((MyViewHolder2)holder).lv.setAdapter(youKeReMenHuaTiAdapter);
+            ((MyViewHolder2)holder).textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, QuanBuHuaTiActivity.class);
+                    context.startActivity(intent);
+
+                }
+            });
         }
 
     }
@@ -125,9 +134,11 @@ public class YouKeTuiJianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
     class MyViewHolder2 extends RecyclerView.ViewHolder {
         RecyclerView lv;
+        TextView textView;
         public MyViewHolder2(View view) {
             super(view);
             lv = (RecyclerView) view.findViewById(R.id.tuijian_fragment_item2_lv);
+            textView = (TextView) view.findViewById(R.id.tuijian_fragment_item2_tv);
         }
     }
 }

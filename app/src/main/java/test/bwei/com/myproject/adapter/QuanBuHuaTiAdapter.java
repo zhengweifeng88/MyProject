@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,13 +17,14 @@ import test.bwei.com.myproject.R;
 import test.bwei.com.myproject.bean.YouKeReMenHuaTiBean;
 
 /**
- * Created by Administrator on 2017/12/14.
+ * Created by Administrator on 2017/12/16.
  */
-public class YouKeReMenHuaTiAdapter extends RecyclerView.Adapter<YouKeReMenHuaTiAdapter.MyViewHolder> {
+
+public class QuanBuHuaTiAdapter extends RecyclerView.Adapter<QuanBuHuaTiAdapter.MyViewHolder> {
     Context context;
     List<YouKeReMenHuaTiBean.DataBean.TopicBean> list = new ArrayList<>();
 
-    public YouKeReMenHuaTiAdapter(Context context) {
+    public QuanBuHuaTiAdapter(Context context) {
         this.context = context;
     }
 
@@ -41,17 +41,16 @@ public class YouKeReMenHuaTiAdapter extends RecyclerView.Adapter<YouKeReMenHuaTi
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.remenhuati_item, parent,
+    public QuanBuHuaTiAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        QuanBuHuaTiAdapter.MyViewHolder holder = new QuanBuHuaTiAdapter.MyViewHolder(LayoutInflater.from(context).inflate(R.layout.quanbuhuati_item, parent,
                 false));
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        Glide.with(context).load(list.get(position).getLogo()).into(holder.remenhuati_item_img);
-        holder.remenhuati_item_title.setText(list.get(position).getTitle());
-        holder.remenhuati_item_comment_count.setText(list.get(position).getComment_count() + "人参与");
+    public void onBindViewHolder(QuanBuHuaTiAdapter.MyViewHolder holder, int position) {
+        Glide.with(context).load(list.get(position).getLogo()).into(holder.quanbuhuati_img);
+//        holder.quanbuhuati_item_tv.setText(list.get(position).getTitle());
     }
 
     @Override
@@ -61,16 +60,13 @@ public class YouKeReMenHuaTiAdapter extends RecyclerView.Adapter<YouKeReMenHuaTi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView remenhuati_item_img;
-        TextView remenhuati_item_title;
-        TextView remenhuati_item_comment_count;
+        ImageView quanbuhuati_img;
+        TextView quanbuhuati_item_tv;
 
         public MyViewHolder(View view) {
             super(view);
-            remenhuati_item_img = (ImageView) view.findViewById(R.id.remenhuati_item_img);
-            remenhuati_item_title = (TextView) view.findViewById(R.id.remenhuati_item_title);
-            remenhuati_item_comment_count = (TextView) view.findViewById(R.id.remenhuati_item_comment_count);
+            quanbuhuati_img = (ImageView) view.findViewById(R.id.quanbuhuati_item_img);
+//            quanbuhuati_item_tv = (TextView) view.findViewById(R.id.quanbuhuati_item_tv);
         }
     }
 }
-
